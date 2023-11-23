@@ -120,9 +120,9 @@ const AddEmp = (props) => {
                   error={Boolean(errors.salary)}
                   helperText={errors.salary}/>
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  className="textfields"
+                  className="textfields text-full"
                   id="outlined-error"
                   label="Email"
                   variant="outlined"
@@ -131,11 +131,12 @@ const AddEmp = (props) => {
                   value={formData.email}
                   onChange={handleChange}
                   error={Boolean(errors.email)}
-                  helperText={errors.email}/>
+                  helperText={errors.email}
+                  fullWidth/>
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} sm={12}>
                 <TextField
-                  className="textfields"
+                  className="textfields text-full"
                   id="outlined-error"
                   label="Password"
                   variant="outlined"
@@ -143,7 +144,8 @@ const AddEmp = (props) => {
                   value={formData.password}
                   onChange={handleChange}
                   error={Boolean(errors.password)}
-                  helperText={errors.password}/>
+                  helperText={errors.password}
+                  fullWidth/>
               </Grid>
             </Grid><br />
             <Button id="submit" variant="contained" onClick={handleSubmit}>Submit</Button>

@@ -1,10 +1,8 @@
 
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../Axiosinst';
 import Addemployee from './AddEmp' ;
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 
 const AdminHome = () => {
   const [employees, setEmployees] = useState([]);
@@ -63,11 +61,11 @@ const AdminHome = () => {
               <TableCell className="table-cell" align="center">{employee.salary}</TableCell>
               <TableCell className="table-cell" align="center">{employee.email}</TableCell>
               <TableCell className="table-cell" align="center">{employee.password}</TableCell>
-              <TableCell className="table-cell" align="center">
-              <EditIcon className="action-button" onClick={()=>updateBlog(employee)} color='primary'/> 
-              </TableCell>
               <TableCell className="table-cell"  align="center">
-              <DeleteIcon className="action-button" onClick={() => deletePost(employee._id)} /> 
+              <Button className="action-button" onClick={() => deletePost(employee._id)}>Delete</Button> 
+              </TableCell>
+              <TableCell className="table-cell" align="center">
+              <Button className="action-button" onClick={()=>updateBlog(employee)} color='primary'>Edit</Button> 
               </TableCell>
             </TableRow>
           ))}
